@@ -11,5 +11,13 @@ How to Use:
 
 You can find an example of this in our TweetPwn repository.
 
+Building
+==========
+To build StarLoader, simply move into its directory and run these commands:
+
+	make
+	make install
+
+After this, log out and log in.
 
 Enjoy.
