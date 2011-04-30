@@ -6,6 +6,6 @@ all:
 	@echo "Parsing code..."
 	@./LogosToStar.sh $(FILE) >fix.m
 	@echo "Compiling and linking..."
-	@$(CC) $(FLAGS) $(FILE)
+	@$(CC) $(FLAGS) fix.m
 	@echo "Cleaning up..."
 	@rm -rf fix.m star.h

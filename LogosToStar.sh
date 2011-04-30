@@ -4,7 +4,7 @@ echo "$1: No such file or directory.">/dev/stderr
 exit 1
 fi
 # dirty hack
-cat > star.h << EOF
+cat << EOF
 #import <Foundation/Foundation.h>
 
 #import <objc/runtime.h>
@@ -17,10 +17,6 @@ cat > star.h << EOF
 @end
 
 #define MSHookMessageEx(class, selector, repl, orig) [Star hookSelector:selector inClass:class withImp:repl andOrig:orig]
-EOF
-echo '#import "star.h"' 
-logos.pl $1 | sed 's/#include <substrate.h>//g'
-cat << EOF
 #import <objc/runtime.h>
 #import <Foundation/Foundation.h>
 @implementation Star
@@ -47,3 +43,4 @@ return object_getIvar(inst, ivar);
 }
 @end
 EOF
+logos.pl $1 | sed 's/#include <substrate.h>//g'
