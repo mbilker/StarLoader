@@ -9,5 +9,6 @@ install:
 	@mkdir ~/.MacOSX &>/dev/null || :
 	@cp Loader.dylib ~/.MacOSX
 	@cp environment.plist ~/.MacOSX
-	@echo "Done. Logout and enjoy!"
+	@launchctl setenv DYLD_INSERT_LIBRARIES $(HOME)/.MacOSX/Loader.dylib
+	@echo "Done and injected the loader."
 all: main install
