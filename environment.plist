@@ -1,3 +1,0 @@
-{
-	"DYLD_INSERT_LIBRARIES" = "$PWD/.MacOSX/Loader.dylib";
-}
