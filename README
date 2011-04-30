@@ -1,0 +1,15 @@
+StarLoader
+==========
+
+
+What's this?
+
+This is a dylib loader for the OpenStar Project.
+It includes an hooking library, and it's pretty fast.
+
+How to Use:
+
+You can find an example of this in our TweetPwn repository.
+
+
+Enjoy.
