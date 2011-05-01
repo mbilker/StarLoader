@@ -36,3 +36,11 @@ To build StarLoader, simply move into its directory and run these commands:
 After this, the loader is already injected so there's no need to log out and log in anymore.
 
 Enjoy.
+
+
+Credits
+=======
+
+qwertyoruiop: actual implementation of the code
+gianguido: some makefile and scripts modding. great work!
+squiffypwn, nerd, jannf et. al: moral support on IRC =P (thanks guys!)
