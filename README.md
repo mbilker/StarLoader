@@ -11,6 +11,15 @@ How to Use:
 
 You can find an example of this in our TweetPwn repository.
 
+Benefits:
+
+* It's really fast!
+* Modular
+* Easy to use!
+* ThinLoader can exclude unsupported apps like Skype.
+* Allows full objc hooking
+* Allows hooking of dynamically compiled C functions.
+
 Installing a precompiled version
 =================================
 
