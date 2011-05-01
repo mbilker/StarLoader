@@ -1,7 +1,7 @@
 FILES=ThinLoader.m
 NAME=ThinLoader.dylib
 CC=g++
-FLAGS=-o $(NAME) -dynamiclib -arch i386 -arch x86_64
+FLAGS=-o $(NAME) -dynamiclib -arch i386 -arch x86_64 -fobjc-gc
 main:
 	@echo "Compiling and linking ThinLoader..."
 	@$(CC) $(FLAGS) $(FILES)
