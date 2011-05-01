@@ -18,7 +18,7 @@ Benefits:
 * Easy to use!
 * ThinLoader can exclude unsupported apps like Skype.
 * Allows full objc hooking
-* Allows hooking of dynamically compiled C functions.
+* Allows hooking of dynamically linked C functions.
 
 Installing a precompiled version
 =================================
