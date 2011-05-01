@@ -41,6 +41,6 @@ Enjoy.
 Credits
 =======
 
-qwertyoruiop: actual implementation of the code
-gianguido: some makefile and scripts modding. great work!
-squiffypwn, nerd, jannf et. al: moral support on IRC =P (thanks guys!)
+*qwertyoruiop: actual implementation of the code
+*gianguido: some makefile and scripts modding. great work!
+*squiffypwn, nerd, jannf et. al: moral support on IRC =P (thanks guys!)
