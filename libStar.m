@@ -15,8 +15,8 @@
 @implementation Star
 +(id)hookIvar:(NSString*)name inInstance:(id)inst 
 {
-Ivar ivar=object_getInstanceVariable(inst, [name UTF8String], NULL);
-return object_getIvar(inst, ivar);
+	Ivar ivar=object_getInstanceVariable(inst, [name UTF8String], NULL);
+	return object_getIvar(inst, ivar);
 }
 +(BOOL)addSelector:(SEL)selector inClass:(Class)cls withImp:(IMP)impl andType:(NSString*)type 
 {
@@ -32,6 +32,6 @@ return object_getIvar(inst, ivar);
 }
 +(void)hookSelector:(SEL)selector inClass:(Class)cls withImp:(IMP)impl andOrig:(IMP*)orig
 {
-*orig = [self hookSelector:selector inClass:cls withImp:impl];
+	*orig = [self hookSelector:selector inClass:cls withImp:impl];
 }
 @end
