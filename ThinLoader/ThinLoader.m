@@ -26,24 +26,24 @@ void thinload(){
 			}
 		}
 		char* slashname=(sym)+strlen(sym)-6;
-		//printf("Exec: %s\n", slashname);
+		printf("Exec: %s\n", sym);
 		if(strcmp(slashname, "/Skype")==0){
 		free(path);
 		free(sym);
-		//printf("STAR: Aww, skype. Disabling Loader.\n");
+		printf("STAR: Aww, skype. Disabling Loader.\n");
 		return;
 		} 
 	}
 	free(path);
 	free(sym);
 	{
-		//printf("STAR: ThinLoader: Loading Loader\n");
+		printf("STAR: ThinLoader: Loading Loader\n");
 		char* lib="/.MacOSX/Loader.dylib";
 		struct passwd* pwd = getpwuid(getuid());
 		char* path=malloc(strlen(pwd->pw_dir)+strlen(lib));
 		strcpy(path, pwd->pw_dir);
 		strcat(path, lib);
-		//printf("STAR: Loading %s\n", path);
+		printf("STAR: Loading %s\n", path);
 		if(!dlopen(path, RTLD_NOW)) perror("dlopen");
 		free(path);
 	}

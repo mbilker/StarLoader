@@ -14,44 +14,33 @@ __attribute__((constructor)) void __starinit()
 	bundle=[[objc_getClass("NSBundle") mainBundle] bundleIdentifier];
     
 	if(bundle)
-    {
-        NSLog(@"STAR: Application has started! [%@]", bundle);
-		
-        struct passwd* pwd = getpwuid(getuid());
-        
-        unsigned lnt = strlen(pwd->pw_dir);
-        
+	{
+		NSLog(@"STAR: Application has started! [%@]", bundle);	
+		struct passwd* pwd = getpwuid(getuid());
+		unsigned lnt = strlen(pwd->pw_dir);
 		char* path = malloc(lnt + 30); //malloc(strlen(pwd->pw_dir)+7);
-		
-        memcpy(path, pwd->pw_dir, lnt);
+		memcpy(path, pwd->pw_dir, lnt);
 		strcat(path, "/.Star/");
-		
-        NSLog(@"STAR: Star Directory is: %s", path);
-		
-        DIR *dp;
+		NSLog(@"STAR: Star Directory is: %s", path);
+		DIR *dp;
 		struct dirent *ep;     
-		
-        dp = opendir (path);
+		dp = opendir (path);
 		if (dp != NULL)
 		{
 			while (ep = readdir (dp))
 			{
 				int len=strlen(ep->d_name);
 				char* fpath= malloc(strlen(path)+len);
-                
 				strcpy(fpath, path);
 				strcat(fpath, ep->d_name);
-				
-                char* ptr=(ep->d_name)+len-5;
-				
-                if (access(fpath, X_OK) == 0 && strcmp(ptr, "dylib") == 0)
-                {
+				char* ptr=(ep->d_name)+len-5;
+				if (access(fpath, X_OK) == 0 && strcmp(ptr, "dylib") == 0)
+				{
 					char* plist_path=malloc(strlen(fpath));
 					strcpy(plist_path, fpath);
 					char* ext=(plist_path)+strlen(plist_path)-5;
 					strcpy(ext, "plist");
-					
-                    id pasth=[NSString stringWithUTF8String:plist_path];
+					id pasth=[NSString stringWithUTF8String:plist_path];
 					free(plist_path);
 					
                     NSArray* listOfValid=[NSArray arrayWithContentsOfFile:pasth];
