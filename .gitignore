@@ -2,3 +2,4 @@ StarLoader
 .DS_Store
 *.dylib
 Loader.dylib
+._*

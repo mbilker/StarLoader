@@ -42,13 +42,10 @@ __attribute__((constructor)) void __starinit()
 					strcpy(ext, "plist");
 					id pasth=[NSString stringWithUTF8String:plist_path];
 					free(plist_path);
-					
-                    NSArray* listOfValid=[NSArray arrayWithContentsOfFile:pasth];
-					
-                    BOOL load=YES;
-					
-                    if (listOfValid) 
-                    {      
+					NSArray* listOfValid=[NSArray arrayWithContentsOfFile:pasth];
+					BOOL load = YES;
+					if (listOfValid) 
+					{
                         for(NSString* valid in listOfValid) 
                         {
 							load=NO;

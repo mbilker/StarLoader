@@ -19,7 +19,7 @@ void thinload(){
 	}
 	{
 		if(readlink(path, sym, 1024)==-1){
-			if(errno!=EINVAL){
+			if(errno != EINVAL){
 				perror("readlink");
 			} else {
 				strcpy(sym, path);
@@ -28,11 +28,11 @@ void thinload(){
 		char* slashname=(sym)+strlen(sym)-6;
 		printf("Exec: %s\n", sym);
 		if(strcmp(slashname, "/Skype")==0){
-		free(path);
-		free(sym);
-		printf("STAR: Aww, skype. Disabling Loader.\n");
-		return;
-		} 
+			free(path);
+			free(sym);
+			printf("STAR: Aww, skype. Disabling Loader.\n");
+			return;
+		}
 	}
 	free(path);
 	free(sym);
