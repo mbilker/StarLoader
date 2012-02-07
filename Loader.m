@@ -46,15 +46,15 @@ __attribute__((constructor)) void __starinit()
 					BOOL load = YES;
 					if (listOfValid) 
 					{
-                        for(NSString* valid in listOfValid) 
-                        {
+						for(NSString* valid in listOfValid)
+						{
 							load=NO;
 							if ([valid isKindOfClass:[NSString class]])
-                            {
-                                if(CFBundleGetBundleWithIdentifier((CFStringRef)valid) != NULL)
-                                {
-                                    NSLog(@"STAR: Match for %@ [%@]", valid, bundle);
-                                    load=YES;
+							{
+								if(CFBundleGetBundleWithIdentifier((CFStringRef)valid) != NULL)
+								{
+									NSLog(@"STAR: Match for %@ [%@]", valid, bundle);
+									load=YES;
                                     break;
                                 }
                             }
